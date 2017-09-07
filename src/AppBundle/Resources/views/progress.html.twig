@@ -1,0 +1,58 @@
+{% extends '@DreamCommerceShopAppstore/base.html.twig' %}
+{% trans_default_domain 'messages' %}
+{% block body %}
+    <main class="rwd-layout-container rwd-layout-width">
+        <section class="rwd-layout-col-12">
+            <div class="l-flex l-box-10 l-column-rwd">
+                <p id="status">{{ "work.in_progress"|trans }}</p>
+            </div>
+            <div class="l-flex l-box-10 l-column-rwd">
+                <div class="errors">
+                    <table id="errors">
+
+                    </table>
+                </div>
+            </div>
+            <div class="l-flex l-box-10 l-column-rwd">
+                <a href="{{ app_path('workdone',{'upload':upload}) | raw}}" class="button button-bg button-larger save-button">{{ "work.back"|trans }}</a>
+            </div>
+        </section>
+    </main>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        var progress = function(){
+            app.progressBar({
+                title: '{{ "work.parsing"|trans }}',
+                onFinishAlert: '{{ "work.finish"|trans }}',
+                disableClose: true
+            });
+            var progressCheck;
+            var runChecker = function(){
+                $.getJSON('{{ app_path('progress') | raw}}',function (data){
+                    if (data.current == data.total){
+                        app.progressBar.setStep({
+                            value: 100,
+                            msg: '{{ "work.progress.1"|trans }} ' + data.current + ' {{ "work.progress.2"|trans }} ' + data.total + ' {{ "work.progress.3"|trans }}'
+                        });
+                        if (data.errors.length > 0) {
+                            $('#errors').append('<tr><td colspan="2">{{ "summary.error"|trans }}</td></tr>');
+                            $('#errors').append('<tr><td>{{ "summary.product_code"|trans }}</td><td>{{ "summary.error.label"|trans }}</td></tr>');
+                            $.each(data.errors, function (index, e) {
+                                $('#errors').append('<tr><td>' + e.product_code + '</td><td>' + e.error + '</td></tr>');
+                            });
+                        }
+                        clearInterval(progressCheck);
+                        app.adjustIframeSize();
+                        $('#status').html('{{ "work.finish.done"|trans }}');
+                    }else{
+                        app.progressBar.setStep({
+                            value: data.percent,
+                            msg: '{{ "work.progress.1"|trans }} ' + data.current + ' {{ "work.progress.2"|trans }} ' + data.total + ' {{ "work.progress.3"|trans }}'
+                        });
+                    }
+                })
+            };
+            progressCheck = setInterval(function(){runChecker();},1000);
+        };
+    </script>
+{% endblock %}

@@ -1,0 +1,34 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+  cache_manager:
+    class: AppBundle\Services\CacheManager
+    arguments: ["@cache.app"]
+  attributes:
+    class: AppBundle\Services\AttributesService
+    arguments: ["@doctrine.cache.memcached",'@logger','@translator.default']
+  options:
+    class: AppBundle\Services\OptionsService
+    arguments: ["@doctrine.cache.memcached","@logger",'@translator.default']
+  file_uploader:
+    class: AppBundle\Services\FileUploader
+    arguments: ["%upload_dir%"]
+  importer_worker:
+    class: AppBundle\Worker\ImportWorker
+    arguments: ['@doctrine.orm.entity_manager','%upload_dir%','@service_container','@csv_parser','@options','@attributes','@logger']
+  csv_parser:
+    class: AppBundle\Services\CsvParserService
+  memcached:
+    class: Memcached
+    calls:
+      - ["addServers", ["%memcached.servers%"]]
+  doctrine.cache.memcached:
+    class: Doctrine\Common\Cache\MemcachedCache
+    calls:
+      - [ "setMemcached", ["@memcached"] ]

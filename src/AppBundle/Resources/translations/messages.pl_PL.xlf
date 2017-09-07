@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>description.first_line</source>
+                <target xml:lang="pl">Weź pod uwagę iż import atrybutów i wariantów jest możliwy tylko dla już istniejących produktów w sklepie.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>description.second_line</source>
+                <target xml:lang="pl">By zaimportować warianty lub atrybuty musisz utworzyć plik CSV, z seperatorem pól ";" (średnik), kodowaniem znaków UTF-8. Poniżej znajdziesz przykład poprawnej struktury utworznych plików.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>description.example_options</source>
+                <target xml:lang="pl">Ściągnij przykład pliku do importu wariantów</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>description.example_attributes</source>
+                <target xml:lang="pl">Ściągnij przykład pliku do importu atrybutów</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>description.example_download</source>
+                <target xml:lang="pl">Ściągnij przykład</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>form.choice.attributes</source>
+                <target xml:lang="pl">Importować atrybuty</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.choice.options</source>
+                <target xml:lang="pl">Importować warianty</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>form.choice.label</source>
+                <target xml:lang="pl">Co chcesz zrobić</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.lang.label</source>
+                <target xml:lang="pl">Wybierz język</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.choice.file.label</source>
+                <target xml:lang="pl">Wybierz plik</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.start</source>
+                <target xml:lang="pl">Importuj</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.not_ready</source>
+                <target xml:lang="pl">Nie wybrano pliku</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>work.in_progress</source>
+                <target xml:lang="pl">Trwa importowanie</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>work.back</source>
+                <target xml:lang="pl">Wróć</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>work.finish</source>
+                <target xml:lang="pl">Import zakończony!</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>work.progress.1</source>
+                <target xml:lang="pl">W trakcie importu,</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>work.progress.2</source>
+                <target xml:lang="pl">z</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>work.progress.3</source>
+                <target xml:lang="pl">przetworzono.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>work.finish.done</source>
+                <target xml:lang="pl">Import zakończył się</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>summary.error</source>
+                <target xml:lang="pl">Podczas importowania pojawiły się błędy:</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>summary.product_code</source>
+                <target xml:lang="pl">Kod produktu</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>summary.error.label</source>
+                <target xml:lang="pl">Opis błędu</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>work.parsing</source>
+                <target xml:lang="pl">Przetwarzanie pliku</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>exception.lang</source>
+                <target xml:lang="pl">Błąd podczas pobierania języków ze sklepu</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>exception.cache</source>
+                <target xml:lang="pl">Błąd generowania pamięci cache, wyczyść ją w swoim sklepie.</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>exception.no_product</source>
+                <target xml:lang="pl">Produkt o kodzie %product_code% nie istnieje.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>exception.lock</source>
+                <target xml:lang="pl">Produkt jest zablokowany do edycji przez innego administratora.</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>exception.check.attribute_group</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania grupy atrybutów %name%:</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>exception.check.attribute_group_categories</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania kategori w grupie atrybutów:</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>exception.check.attribute</source>
+                <target xml:lang="pl">Błąd poczas sprawdzania atrybutu %name% z wartością %value%:</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>exception.check.options_group</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania grupy wariantów %name%:</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>exception.check.options</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania wariantów.</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>exception.check.option</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania cech w wariancie o id %id%:</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>exception.check.option_exists</source>
+                <target xml:lang="pl">Błąd podczas sprawdzania obecnych wariantów w produkcie:</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>exception.adding.attribute</source>
+                <target xml:lang="pl">Błąd dodawania atrybutu</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>exception.adding.option</source>
+                <target xml:lang="pl">Błąd dodawania nowej grupy wariantów %name%</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>exception.wrong_file.attributes</source>
+                <target xml:lang="pl">Błędny format pliku do importu atrybutów</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>exception.wrong_file.options</source>
+                <target xml:lang="pl">Błędny format pliku do importu wariantów</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

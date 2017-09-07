@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>description.first_line</source>
+                <target xml:lang="tr">Seçenekler yalnızca sitede daha önce sitenizde kayıtlı olan ürünler için aktarılabilir ve lütfen ürün seçeneklerini, ürün özelliklerine aktarılmadığından emin olun.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>description.second_line</source>
+                <target xml:lang="tr">Ürün seçeneklerini veya özelliklerini aktarabilmek için bir CSV doyası oluşturmalı, kolonları ";" ile ayırmalı ve dosyada UTF-8 kodlama kullanmalısınız. Uygun bir dosya yapısının örneği için aşağıdaki dosyayı kullanabilirsniz.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>description.example_options</source>
+                <target xml:lang="tr">Ürün seçenekleri aktarımı için örnek dosyayı indir</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>description.example_attributes</source>
+                <target xml:lang="tr">Ürün özellikleri aktarımı için örnek dosyayı indir</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>description.example_download</source>
+                <target xml:lang="tr">Örneği indir</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>form.choice.attributes</source>
+                <target xml:lang="tr">Özellikleri aktar</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.choice.options</source>
+                <target xml:lang="tr">Seçenekleri aktar</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>form.choice.label</source>
+                <target xml:lang="tr">Ne yapmak istersiniz?</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.lang.label</source>
+                <target xml:lang="tr">Dil seçimi yapın</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.choice.file.label</source>
+                <target xml:lang="tr">Dosya seçin</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.start</source>
+                <target xml:lang="tr">Yüklemeye başla</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.not_ready</source>
+                <target xml:lang="tr">Dosya seçilmedi</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>work.in_progress</source>
+                <target xml:lang="tr">Aktarılıyor...</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>work.back</source>
+                <target xml:lang="tr">Geri</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>work.finish</source>
+                <target xml:lang="tr">Aktarım tamamlandı!</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>work.progress.1</source>
+                <target xml:lang="tr">İşleniyor,</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>work.progress.2</source>
+                <target xml:lang="tr">işleminin</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>work.progress.3</source>
+                <target xml:lang="tr">tamamlandı.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>work.finish.done</source>
+                <target xml:lang="tr">Aktarım durduruldu</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>summary.error</source>
+                <target xml:lang="tr">Aktarım esnasında bazı hatalar oluştu:</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>summary.product_code</source>
+                <target xml:lang="tr">Ürün kodu</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>summary.error.label</source>
+                <target xml:lang="tr">Hata</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>work.parsing</source>
+                <target xml:lang="tr">Dosya ayıklanıyor</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>exception.lang</source>
+                <target xml:lang="tr">Diller indirilirken hata oluştu</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>exception.cache</source>
+                <target xml:lang="tr">Önbellek oluşturulurken hata alındı, lütfen sanal mağazanızın önbelleğini temizleyin</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>exception.no_product</source>
+                <target xml:lang="tr">%product_code% Koduna ait bir ürün bulunamadı.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>exception.lock</source>
+                <target xml:lang="tr">Ürün başka bir yönetici tarafından düzenlenmek için kilitlenmiş.</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>exception.check.attribute_group</source>
+                <target xml:lang="tr">Özellike grubu %name% incelenirken hata oluştu:</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>exception.check.attribute_group_categories</source>
+                <target xml:lang="tr">Özellik grubu kategorileri incelenirken hata oluştu:</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>exception.check.attribute</source>
+                <target xml:lang="tr">%name% isimli ve %value% değerli özellik incelenirken hata oluştu:</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>exception.check.options_group</source>
+                <target xml:lang="tr">Özellik grubu %name% incelenirken hata oluştu:</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>exception.check.options</source>
+                <target xml:lang="tr">Seçenekler incelenirken hata oluştu.</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>exception.check.option</source>
+                <target xml:lang="tr">%id% ID'li seçenek için değerler incelenirken hata oluştu:</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>exception.check.option_exists</source>
+                <target xml:lang="tr">Üründeki seçeneklerin valığını inceleme başarısız:</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>exception.adding.attribute</source>
+                <target xml:lang="tr">Özellik eklenirken hata oluştu</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>exception.adding.option</source>
+                <target xml:lang="tr">Yeni özellik grubu %name% eklenirken hata oluştu</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>exception.wrong_file.attributes</source>
+                <target xml:lang="tr">Wrong file for attributes import</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>exception.wrong_file.options</source>
+                <target xml:lang="tr">Wrong file for options import</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

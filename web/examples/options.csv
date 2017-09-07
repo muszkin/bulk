@@ -1,0 +1,9 @@
+product_code;option_code;option_group;option_1;option_2;option_3;stock;weight;price_mode;price_percent;price;active;default
+"319-jeans";o11;Rozmiar/Kolor;color | kolor | czerwony | #ff0000;select | rozmiar | L;;10;1;1;0;100;1;0
+"319-jeans";o12;Rozmiar/Kolor;color | kolor | czerwony | #ff0000;select | rozmiar | XL;;11;2;1;0;200;1;0
+"319-jeans";o13;Rozmiar/Kolor;color | kolor | zielony | #00ff00;select | rozmiar | L;;12;3;1;0;300;1;0
+"319-jeans";o14;Rozmiar/Kolor;color | kolor | zielony | #00ff00;select | rozmiar | XL;;13;4;1;0;400;1;0
+"319-jeans";o15;Rozmiar/Kolor;color | kolor | niebieski | #0000ff;select | rozmiar | L;;14;5;1;0;500;1;0
+"319-jeans";o16;Rozmiar/Kolor;color | kolor | niebieski | #0000ff;select | rozmiar | XL;;15;6;1;0;600;1;0
+"319-jeans";o17;Rozmiar/Kolor;color | kolor | czerwony | #ff0000;select | rozmiar | L;;16;7;1;0;700;1;0
+"319-jeans";o18;Rozmiar/Kolor;color | kolor | czerwony | #ff0000;select | rozmiar | XL;;17;8;1;0;800;1;0

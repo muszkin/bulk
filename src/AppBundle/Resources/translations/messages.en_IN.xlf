@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>description.first_line</source>
+                <target xml:lang="en">Please note that import options for atributes and options is only passible for products that are already existing in your store.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>description.second_line</source>
+                <target xml:lang="en">To import options or attributes you need to create a CSV file, delimited by semicoln ";" with UTF-8 encoding. Bellow you have example of proper structure of this file.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>description.example_options</source>
+                <target xml:lang="en">Download example file for options import</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>description.example_attributes</source>
+                <target xml:lang="en">Download example file for attributes import</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>description.example_download</source>
+                <target xml:lang="en">Download example</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>form.choice.attributes</source>
+                <target xml:lang="en">Import attributes</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.choice.options</source>
+                <target xml:lang="en">Import options</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>form.choice.label</source>
+                <target xml:lang="en">What you want to do</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.lang.label</source>
+                <target xml:lang="en">Choose language</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.choice.file.label</source>
+                <target xml:lang="en">Choose file</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.start</source>
+                <target xml:lang="en">Start upload</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.not_ready</source>
+                <target xml:lang="en">File is not selected</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>work.in_progress</source>
+                <target xml:lang="en">Importing...</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>work.back</source>
+                <target xml:lang="en">Back</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>work.finish</source>
+                <target xml:lang="en">Import done!</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>work.progress.1</source>
+                <target xml:lang="en">Working,</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>work.progress.2</source>
+                <target xml:lang="en">of</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>work.progress.3</source>
+                <target xml:lang="en">are done.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>work.finish.done</source>
+                <target xml:lang="en">Import is over</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>summary.error</source>
+                <target xml:lang="en">Durning import there was some errors:</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>summary.product_code</source>
+                <target xml:lang="en">Product code</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>summary.error.label</source>
+                <target xml:lang="en">Error</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>work.parsing</source>
+                <target xml:lang="en">Parsing file</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>exception.lang</source>
+                <target xml:lang="en">Error when downloading languages</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>exception.cache</source>
+                <target xml:lang="en">Error when generating cache ,clean cache in your shop</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>exception.no_product</source>
+                <target xml:lang="en">Product of code %product_code% doesn't exists.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>exception.lock</source>
+                <target xml:lang="en">Product is locked to edit by another administrator.</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>exception.check.attribute_group</source>
+                <target xml:lang="en">Error when checking attribute group %name%:</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>exception.check.attribute_group_categories</source>
+                <target xml:lang="en">Error when checking attribute group categories:</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>exception.check.attribute</source>
+                <target xml:lang="en">Error when checking attribute %name% with value %value%:</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>exception.check.options_group</source>
+                <target xml:lang="en">Error when checking options group %name%:</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>exception.check.options</source>
+                <target xml:lang="en">Error when options.</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>exception.check.option</source>
+                <target xml:lang="en">Error when checking values for option of id %id%:</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>exception.check.option_exists</source>
+                <target xml:lang="en">Checking exist of options in product fails:</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>exception.adding.attribute</source>
+                <target xml:lang="pl">Error when adding attribute</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>exception.adding.option</source>
+                <target xml:lang="en">Error when adding new option group %name%</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>exception.wrong_file.attributes</source>
+                <target xml:lang="en">Wrong file for attributes import</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>exception.wrong_file.options</source>
+                <target xml:lang="en">Wrong file for options import</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

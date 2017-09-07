@@ -1,0 +1,6 @@
+root:
+    resource: "@DreamCommerceShopAppstoreBundle/Resources/config/routing.xml"
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

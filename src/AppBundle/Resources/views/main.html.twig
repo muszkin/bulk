@@ -1,0 +1,77 @@
+{% extends '@DreamCommerceShopAppstore/base.html.twig' %}
+{% form_theme form '@DreamCommerceShopAppstore/form_theme.html.twig' %}
+{% trans_default_domain 'messages' %}
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <style>
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        .inputfile:focus + label {
+            outline: 1px dotted #000;
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+        .inputfile + label * {
+            pointer-events: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var submitBtn = $("#upload_submit");
+            var formStart = "{{ "form.start"|trans }}";
+            var formNotReady = "{{ "form.not_ready"|trans }}";
+            $(window).on('mousemove',function() {
+                var fileName = $("#upload_filename").val();
+                if(fileName.length > 0) {
+                    submitBtn.removeAttr('disabled');
+                    submitBtn.val(formStart);
+                } else {
+                    submitBtn.val(formNotReady);
+                    submitBtn.attr('disabled','disabled');
+                }
+            });
+        });
+    </script>
+    <main class="rwd-layout-container" style="padding-left: 1.5em;padding-top: 4em;">
+        <section class="rwd-layout-col-12">
+            <div class="l-flex l-box-10 l-column-rwd">
+                <aside class="category-view rwd-layout-col-3" style="text-align: center;">
+                    {{ form_start(form) }}
+                    <br/>
+                    {{ form_row(form.type) }}<br/>
+                    {{ form_row(form.lang) }}<br/>
+                    {{ form_row(form.filename) }}<br/>
+                    <br/><br/><input id="upload_submit" type="submit" class="button button-bg button-important" value="{{ "form.not_ready"|trans }}" disabled="disabled">
+                    {{ form_end(form) }}
+                </aside>
+                <section class="rwd-layout-col-9">
+                    <p>
+                        <div class="user-tag-helper">
+                            {{ "description.first_line"|trans }}<br/>
+                            {{ "description.second_line"|trans }}
+                        <div>
+                            <br/><br/>{{ "description.example_options"|trans }}<br/>
+                            <a href="{{ asset('examples/options.csv') }}" class="button-bg button button-note">{{ "description.example_download"|trans }}</a>
+                        </div>
+                        <div>
+                            <br/><br/>{{ "description.example_attributes"|trans }}<br/>
+                            <a href="{{ asset('examples/attributes.csv') }}" class="button-bg button button-note">{{ "description.example_download"|trans }}</a>
+                        </div>
+                        </div>
+                    </p>
+                </section>
+            </div>
+            <div class="l-flex l-box-10 l-column-rwd">
+                <section class="rwd-layout-col-12" id="results">
+
+                </section>
+            </div>
+        </section>
+    </main>
+{% endblock %}

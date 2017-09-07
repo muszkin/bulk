@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="BillingBundle\Entity\Shop" table="Shop">
+        <indexes>
+            <index name="shop" columns="name"/>
+        </indexes>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+
+        <one-to-one field="token" target-entity="DreamCommerce\ShopAppstoreBundle\Model\TokenInterface" mapped-by="shop" inversed-by="token">
+            <cascade>
+                <cascade-remove/>
+            </cascade>
+        </one-to-one>
+
+        <one-to-one target-entity="DreamCommerce\ShopAppstoreBundle\Model\BillingInterface" mapped-by="shop" field="billing" inversed-by="billing">
+            <cascade>
+                <cascade-remove/>
+            </cascade>
+        </one-to-one>
+
+        <one-to-many target-entity="DreamCommerce\ShopAppstoreBundle\Model\SubscriptionInterface" mapped-by="shop"
+                     field="subscriptions">
+            <cascade>
+                <cascade-remove/>
+            </cascade>
+            <order-by>
+                <order-by-field name="expiresAt" direction="DESC"/>
+            </order-by>
+        </one-to-many>
+
+    </entity>
+</doctrine-mapping>

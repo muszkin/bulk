@@ -1,0 +1,60 @@
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+/var/supervisord/*
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
+!var/supervisord/.gitkeep
+
+.idea
+
+# Parameters
+/app/config/parameters.yml
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+!bin/config-sync
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# Assets managed by Bower
+/web/assets/vendor/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
+/composer.phar
+
+
+/.cron/
+/.autorun
+/.cache/
+/.config/
+/.composer/
+/.bash_history
+/.gitconfig
+/.lesshst
+/.mysql_history
+/.ssh/
+/.supervisord.conf
+/.vim/
+/.viminfo
+/*.sql.gz
+/db.pass
+/dist.tar.gz
+/*.sem
+/.local
+/var/supervisord.pid

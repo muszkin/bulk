@@ -1,4 +1,5 @@
-bulk
+Bulk importer
 ====
 
-A Symfony project created on December 21, 2016, 3:34 pm.
+Application for bulk import attributes and options for products in Shoper.
+

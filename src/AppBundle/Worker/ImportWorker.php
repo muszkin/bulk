@@ -199,8 +199,14 @@ class ImportWorker implements GearmanOutputAwareInterface
                         }catch (\Exception $exception){
                             $error = new Error();
                             $error->setUpload($upload);
-                            $error->setProductCode($row['product_code']);
                             $error->setError($exception->getMessage());
+                            try {
+                                $error->setProductCode($row['product_code']);
+                            }catch (\Exception $exception){
+                                $error->setProductCode("Brak kodu");
+                                $error->setError("Błąd odczytania product_code - popraw plik");
+                            }
+
 
                             $this->entityManager->persist($error);
                             $this->entityManager->flush();

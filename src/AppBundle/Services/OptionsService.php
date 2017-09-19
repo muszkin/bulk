@@ -117,7 +117,12 @@ class OptionsService implements ImportInterface
             $this->createCode();
         }
 
-        $this->product_code = $this->post['product_code'];
+        try {
+            $this->product_code = $this->post['product_code'];
+        }catch (\Exception $exception){
+            throw new \Exception("Błąd odczytania kodu produktu");
+        }
+
         try {
             $this->productCache = $this->generateProductCache($this->product_code);
         }catch (\Exception $exception){

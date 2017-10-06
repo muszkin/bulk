@@ -31,13 +31,20 @@ class CsvParserService
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
             {
                 if(!$header)
-                    $header = $row;
+                    $header = $this->remove_utf8_bom($row);
                 else
-                    $data[] = array_combine($header, $row);
+                    $data[] = array_combine($this->remove_utf8_bom($header), $this->remove_utf8_bom($row));
             }
             fclose($handle);
         }
         return $data;
+    }
+
+    public function remove_utf8_bom($text)
+    {
+        $bom = pack('H*','EFBBBF');
+        $text = preg_replace("/^$bom/", '', $text);
+        return $text;
     }
 
     public function detectDelimiter(File $file = null)

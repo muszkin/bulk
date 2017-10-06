@@ -164,7 +164,22 @@ class ImportWorker implements GearmanOutputAwareInterface
             $file = new File($this->path.$upload->getFilename());
 
             try {
-                $data = $this->csvParser->read($file);
+                try {
+                    $data = $this->csvParser->read($file);
+                }catch (\Exception $exception){
+                    $error = new Error();
+                    $error->setUpload($upload);
+                    $error->setError("Błąd przetwarzanai pliku csv");
+                    $error->setProductCode("Brak");
+
+                    $this->entityManager->persist($error);
+                    $this->entityManager->flush();
+                    $upload->setActive(false);
+                    $upload->setFinished(true);
+                    $upload->setOffset($upload->getTotal());
+                        
+                    return true;
+                }
 
                 $interface = $upload->getType();
 
@@ -203,8 +218,7 @@ class ImportWorker implements GearmanOutputAwareInterface
                             try {
                                 $error->setProductCode($row['product_code']);
                             }catch (\Exception $exception){
-                                $error->setProductCode("Brak kodu");
-                                $error->setError("Błąd odczytania product_code - popraw plik");
+                                $error->setProductCode("Błąd odczytania product_code - popraw plik");
                             }
 
 

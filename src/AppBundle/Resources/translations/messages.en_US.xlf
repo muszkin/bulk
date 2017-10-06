@@ -154,6 +154,10 @@
                 <source>exception.wrong_file.options</source>
                 <target xml:lang="en">Wrong file for options import</target>
             </trans-unit>
+            <trans-unit id="39">
+                <source>locked.app</source>
+                <target xml:lang="en">Application is being updating. Come back later.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

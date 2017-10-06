@@ -84,6 +84,7 @@ class AttributesService implements ImportInterface
             $attribute = explode('=',$v);
             $attributes[$k] = $attribute;
         }
+
         try{
             $this->getProductInfo($data['product_code']);
         }catch (\Exception $exception){
@@ -405,6 +406,8 @@ class AttributesService implements ImportInterface
         $resource->filters([
             'stock.code' => $product_code
         ]);
+        $product_code = preg_replace("/[^\d^\w]/","",$product_code);
+
         try {
             $product = $resource->get();
         }catch(\Exception $exception){
@@ -417,7 +420,6 @@ class AttributesService implements ImportInterface
         if (property_exists($product,'count') && $product->count < 1){
             throw new \Exception($this->translator->trans("exception.no_product",['%product_code%'=>$product_code],"messages",$this->locale));
         }else{
-            $return = [];
             foreach ($product as $part){
                 $attributes = [];
                 foreach ($part->attributes as $attributes_list){
@@ -433,9 +435,13 @@ class AttributesService implements ImportInterface
                     "category_id" => $part->category_id,
                     "attributes" => $attributes
                 ];
+                if ($this->cache->contains($this->productCache.$product_code)){
+                    $this->cache->delete($this->productCache.$product_code);
+                }
+                $this->cache->save($this->productCacheKey . $product_code,$return,120);
+                $this->productCache = $this->cache->fetch($this->productCacheKey.$product_code);
+                break;
             }
-            $this->cache->save($this->productCacheKey . $product_code,$return);
-            $this->productCache = $this->cache->fetch($this->productCacheKey.$product_code);
         }
     }
 

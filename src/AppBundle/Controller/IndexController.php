@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Upload;
 use AppBundle\Form\UploadType;
+use AppBundle\Services\ApplicationManager;
 use Doctrine\DBAL\DBALException;
 use DreamCommerce\ShopAppstoreBundle\Controller\ApplicationController;
 use DreamCommerce\ShopAppstoreBundle\Model\ShopInterface;
@@ -27,6 +28,10 @@ class IndexController extends ApplicationController
      */
     public function indexAction(Request $request)
     {
+        if (!ApplicationManager::check($this->shop)){
+            return $this->render("@App/locked.html.twig");
+        }
+
         $this->get('translator')->setLocale($request->get('locale'));
 
         $em = $this->getDoctrine()->getManager();
@@ -123,6 +128,10 @@ class IndexController extends ApplicationController
      * @return string
      */
     public function getProgress(Request $request){
+        if (!ApplicationManager::check($this->shop)){
+            return $this->render("@App/locked.html.twig");
+        }
+
         $this->get('translator')->setLocale($request->get('locale'));
         $em = $this->getDoctrine();
 
@@ -172,6 +181,10 @@ class IndexController extends ApplicationController
      * @return mixed
      */
     public function workDone(Upload $upload){
+        if (!ApplicationManager::check($this->shop)){
+            return $this->render("@App/locked.html.twig");
+        }
+
         $em = $this->getDoctrine();
 
         $upload = $em->getRepository('AppBundle:Upload')->findOneBy([

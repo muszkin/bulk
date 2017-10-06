@@ -117,6 +117,7 @@ class OptionsService implements ImportInterface
             $this->createCode();
         }
 
+
         try {
             $this->product_code = $this->post['product_code'];
         }catch (\Exception $exception){
@@ -232,14 +233,15 @@ class OptionsService implements ImportInterface
     }
 
     private function generateProductCache($product_code,$regenerate = false){
-        if (!$this->cache->contains($this->productCacheKey.$product_code) || $regenerate){
+        $pcCacheKey = preg_replace("/[^\d^\w]/","",$product_code);
+        if (!$this->cache->contains($this->productCacheKey.$pcCacheKey) || $regenerate){
             try {
-                $this->cache->save($this->productCacheKey . $product_code, $this->getProductAllInfo($product_code));
+                $this->cache->save($this->productCacheKey . $pcCacheKey, $this->getProductAllInfo($product_code));
             }catch(\Exception $e){
                 throw new \Exception($e->getMessage());
             }
         }
-        return $this->cache->fetch($this->productCacheKey.$product_code);
+        return $this->cache->fetch($this->productCacheKey.$pcCacheKey);
     }
 
     private function getProductAllInfo($product_code){
@@ -548,7 +550,7 @@ class OptionsService implements ImportInterface
             "price" => $this->post['price'],
             "price_type" => ($this->post['price_mode'] == 1)?1:0,
             "active" => $this->post['active'],
-            "default" => 0, //$this->post['default'], change when fix goes live
+            "default" => $this->post['default'], //$this->post['default'], change when fix goes live
             "stock" => $this->post['stock'],
             "code" => $this->post['option_code'],
             "weight" => $this->post['weight'],

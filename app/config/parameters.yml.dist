@@ -21,6 +21,7 @@ parameters:
     app_secret:            ~
     appstore_secret:            ~
     upload_dir: ~
+    config: ~
     memcached.servers:
             -
                 host: 127.0.0.1

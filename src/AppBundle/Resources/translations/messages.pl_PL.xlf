@@ -154,6 +154,10 @@
                 <source>exception.wrong_file.options</source>
                 <target xml:lang="pl">Błędny format pliku do importu wariantów</target>
             </trans-unit>
+            <trans-unit id="39">
+                <source>locked.app</source>
+                <target xml:lang="pl">Aplikacja w trakcie aktualizacji. Zapraszamy za chwilę.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

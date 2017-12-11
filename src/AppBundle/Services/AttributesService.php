@@ -85,11 +85,7 @@ class AttributesService implements ImportInterface
             $attributes[$k] = $attribute;
         }
 
-        try{
-            $this->getProductInfo($data['product_code']);
-        }catch (\Exception $exception){
-            throw new \Exception($exception->getMessage());
-        }
+        $this->getProductInfo($data['product_code']);
         $this->group_name = $data['attributes_group'];
 
         foreach ($attributes as $group){
@@ -407,7 +403,6 @@ class AttributesService implements ImportInterface
             'stock.code' => $product_code
         ]);
         $product_code = preg_replace("/[^\d^\w]/","",$product_code);
-
         try {
             $product = $resource->get();
         }catch(\Exception $exception){
@@ -435,10 +430,10 @@ class AttributesService implements ImportInterface
                     "category_id" => $part->category_id,
                     "attributes" => $attributes
                 ];
-                if ($this->cache->contains($this->productCache.$product_code)){
-                    $this->cache->delete($this->productCache.$product_code);
+                if ($this->cache->contains($this->productCacheKey.$product_code)){
+                    $this->cache->delete($this->productCacheKey.$product_code);
                 }
-                $this->cache->save($this->productCacheKey . $product_code,$return,120);
+                $this->cache->save($this->productCacheKey . $product_code,$return);
                 $this->productCache = $this->cache->fetch($this->productCacheKey.$product_code);
                 break;
             }

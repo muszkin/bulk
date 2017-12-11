@@ -548,7 +548,7 @@ class OptionsService implements ImportInterface
     private function createStockUpdate($stock_id){
         $data = [
             "price" => $this->post['price'],
-            "price_type" => ($this->post['price_mode'] == 1)?1:0,
+            "price_type" => ($this->post['price_mode'] >= 1 && $this->post['price_mode'] <= 3)?$this->post['price_mode']:0,
             "active" => $this->post['active'],
             "default" => $this->post['default'], //$this->post['default'], change when fix goes live
             "stock" => $this->post['stock'],
@@ -563,7 +563,7 @@ class OptionsService implements ImportInterface
     private function createStock(){
         $data = [
             "price" => $this->post['price'],
-            "price_type" => ($this->post['price_mode'] == 1)?1:0,
+            "price_type" => ($this->post['price_mode'] >= 1 && $this->post['price_mode'] <= 3)?$this->post['price_mode']:0,
             "active" => $this->post['active'],
             "default" => 0 ,//$this->post['default'], change when fix goes live
             "stock" => $this->post['stock'],

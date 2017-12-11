@@ -31,7 +31,7 @@ class Error
     /**
      * @var string
      *
-     * @ORM\Column(name="error", type="string", length=255)
+     * @ORM\Column(name="error", type="text")
      */
     private $error;
 

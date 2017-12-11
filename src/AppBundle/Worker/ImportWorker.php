@@ -214,7 +214,7 @@ class ImportWorker implements GearmanOutputAwareInterface
                         }catch (\Exception $exception){
                             $error = new Error();
                             $error->setUpload($upload);
-                            $error->setError($exception->getMessage());
+                            $error->setError($exception->getMessage().PHP_EOL.$exception->getTraceAsString());
                             try {
                                 $error->setProductCode($row['product_code']);
                             }catch (\Exception $exception){

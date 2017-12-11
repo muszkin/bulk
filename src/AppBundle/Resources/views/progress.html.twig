@@ -20,16 +20,15 @@
     </main>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
-        var progress = function(){
+        var progress = function(app){
             app.progressBar({
                 title: '{{ "work.parsing"|trans }}',
                 onFinishAlert: '{{ "work.finish"|trans }}',
-                disableClose: true
             });
             var progressCheck;
             var runChecker = function(){
                 $.getJSON('{{ app_path('progress') | raw}}',function (data){
-                    if (data.current == data.total){
+                    if (data.current >= data.total){
                         app.progressBar.setStep({
                             value: 100,
                             msg: '{{ "work.progress.1"|trans }} ' + data.current + ' {{ "work.progress.2"|trans }} ' + data.total + ' {{ "work.progress.3"|trans }}'
@@ -54,5 +53,7 @@
             };
             progressCheck = setInterval(function(){runChecker();},1000);
         };
+
+        events['bla'] = progress;
     </script>
 {% endblock %}
